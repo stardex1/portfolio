@@ -1,0 +1,487 @@
+@charset "UTF-8";
+
+/* body */
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    --aspect-ratio: 33/17;
+    background: linear-gradient(to bottom, #000000 8%, #003ead, #004596);
+    overflow-x: hidden;
+}
+
+/* header */
+header {
+    width: 100%;
+    height: 60px;
+    position: fixed;
+    backdrop-filter: saturate(180%) blur(5px);
+    z-index: 100000;
+    border-bottom: 1px solid #003ead;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* #헤더 */
+#header {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2vw;
+}
+
+#header .logo h1 a {
+    font-size: 2.1rem;
+    color: #fff;
+    font-weight: 600;
+    transition: all .3s ease;
+}
+
+#header .logo h1 a:hover {
+    color: #ff5800;
+}
+
+#header .nav {
+    transition: all .5s ease-in-out;
+}
+
+#header .nav a {
+    font-size: 2.3rem;
+    color: #fff;
+    transition: all .3s ease;
+}
+
+#header .nav a:hover {
+    color: #ff5800;
+}
+
+#header .menu {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.7);
+    clip-path: polygon(100% 0, 100% 0%, 0 0, 0 0);
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+#header .menu.active {
+    opacity: 1;
+    clip-path: polygon(100% 100%, 100% 0, 0 0, 0 100%);
+    transition: all .4s ease-in-out;
+}
+
+#header .menu .nav_cont {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#header .menu .nav_cont .times {
+    position: fixed;
+    right: 2%;
+    top: -10%;
+    font-size: 50px;
+    transition: all .3s ease;
+}
+
+#header .menu .nav_cont .times:hover {
+    color: #ff5800;
+}
+
+#header .menu .nav_cont p {
+    display: flex;
+    align-items: center;
+    font-size: 3vw;
+    width: 100%;
+    text-align: center;
+    height: 100%;
+    border-bottom: 1px solid #003ead;
+}
+
+#header .menu .nav_cont p a {
+    color: #fff;
+    padding: 1vw;
+    width: 100%;
+    font-weight: 700;
+    transition: all .3s ease;
+}
+
+#header .menu .nav_cont p a:hover {
+    color: #ff5800;
+}
+
+
+
+
+
+/* dot */
+#dot {
+    position: fixed;
+    right: 1%;
+    top: 50%;
+    z-index: 10000;
+    transform: translate(-1%, -50%);
+    transition: all .5s ease;
+}
+
+#dot li {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 8vw 0;
+    transition: all .5s ease;
+}
+
+#dot li a {
+    background-color: #fff;
+    color: #fff;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: all .5s ease;
+}
+
+#dot li.active {
+    background: #ff5800;
+    color: #ff5800;
+}
+
+#dot li.active a {
+    background: #ff5800;
+    border-color: #ff5800;
+    color: #ff5800;
+}
+
+#dot li a em {
+    position: absolute;
+    font-style: normal;
+    font-weight: 900;
+    transform: translate(-100%) rotate(90deg);
+    transition: all .3s linear;
+    text-align: center;
+    font-size: 18px;
+}
+
+#dot li.active em {
+    transform: translate(-40%, 130%) rotate(0);
+}
+
+
+/* 인트로 */
+#intro {
+    z-index: 0;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left .txt_box {
+    width: 100%;
+}
+
+#intro .intro {
+    text-transform: capitalize;
+    text-align: start;
+}
+
+#intro .left {
+    margin-right: 2vw;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+#intro .left h2 {
+    font-weight: bold;
+    font-size: 1.6vw;
+    letter-spacing: .15vw;
+    color: rgb(255, 255, 255);
+}
+
+#intro .left p {
+    font-size: 1.3vw;
+    margin-top: 1.5vw;
+    letter-spacing: .15vw;
+    color: #fff;
+}
+
+#intro .left p strong {
+    color: #ffce71;
+}
+
+.pf_box {
+    width: 13vw;
+    border: .15vw solid #003ead;
+    margin-left: 2vw;
+}
+
+
+
+/* info */
+
+.info {
+    position: fixed;
+    z-index: 1000;
+    top: 50%;
+    right: 1%;
+    transform: translate(-1%, -50%);
+    display: none;
+}
+
+.info li {
+    font-size: 1vw;
+    line-height: 1.8;
+    color: #fff;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+    margin: 8px;
+    transition: all 0.3s ease;
+}
+
+.info li.active {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 1);
+    background-color: #9d00ff;
+}
+
+.info li a {
+    background-color: rgba(255, 255, 255, 0.7);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    transition: all 0.3s ease, transform 0.3s ease;
+}
+
+.info li.active a {
+    transform: scale(0.4);
+}
+
+.info li span {
+    color: #fff;
+}
+
+.info li.active a:last-child {
+    background: #fff;
+    color: #fff;
+}
+
+
+
+
+
+/* 메인 컨텐츠 */
+#wrap {
+    z-index: 1;
+}
+
+.contents {
+    margin: 0 auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-item {
+    position: relative;
+    width: 100%;
+    max-width: 90vw;
+    margin: 60vh auto;
+    color: #fff;
+}
+
+.content-item-num {
+    font-size: 10vw;
+    padding-left: 5vw;
+}
+
+
+.contents .content_box {
+    padding: 5vw 50% 5vw 5vw;
+    position: relative;
+}
+
+.contents .content_box:nth-child(odd) {
+    padding: 5vw 5vw 5vw 50%;
+}
+
+.content-item-title {
+    text-align: left;
+    font-weight: 600;
+    text-transform: capitalize;
+    color: #fff;
+    padding: 1.5vw 0;
+    font-size: 2.5vw;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+.content_box:nth-child(odd) .content-item-title {
+    text-align: right;
+}
+
+.content-item-title strong {
+    color: #0093ff;
+}
+
+.content-item-title span {
+    font-size: 1vw;
+    font-weight: 600;
+    color: #ff5800;
+    display: block;
+    margin-top: 1vw;
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 100%;
+}
+
+.content-item-imgWrap {
+    width: 100%;
+    z-index: 1;
+    border: 3px solid #ff5800;
+    overflow: hidden;
+    margin-top: 2vw;
+}
+
+.content-item-img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-item-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.content-item-desc {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content_box:nth-child(odd) .content-item-desc {
+    justify-content: flex-end;
+}
+
+#section4 .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width: 100%;
+    height: 500px;
+    font-family: 'IBM Plex Sans KR', sans-serif;
+}
+
+#section4 .content-item-imgWrap {
+    background: #220093;
+    box-shadow: 0 0 30px #ff5800;
+}
+
+#section4 .form h2 {
+    font-size: 1.8vw;
+    margin-top: 2vw;
+    color: #fff;
+}
+
+#section4 .form h2:first-child {
+    margin: 0;
+}
+
+#section4 .form p {
+    background: #fff;
+    padding: .3vw 1.5vw;
+    margin-top: .3vw;
+    font-size: 1.2vw;
+    text-align: center;
+    color: #fff;
+    display: block;
+    border-radius: 5px;
+    background: #ff5800;
+    border: 3px solid #ffe0a5;
+}
+
+
+.content-item-desc a {
+    background: #fff;
+    margin: 2vw 0;
+    padding: .5vw 0;
+    width: 25%;
+    font-size: 1.3vw;
+    font-weight: 400;
+    line-height: 1.4;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    display: block;
+    border-radius: 5px;
+    background: #ff5800;
+    border: 3px solid #ffe0a5;
+    transition: all .3s ease;
+}
+
+.content-item-desc a:hover {
+    color: #ff5800;
+    background: #fff;
+    border: 3px solid #ff5800;
+}
+
+
+/* 개별적으로 나타나기 */
+.contents > div .content-item-num {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1s .3s cubic-bezier(0, 0.87, 0.26, 1.04);
+}
+
+.contents > div .content-item-title {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 1s .5s cubic-bezier(0, 0.87, 0.26, 1.04);
+}
+
+.contents > div .content-item-imgWrap {
+    opacity: 0;
+    transform: translateY(200px);
+    transition: all 1s .7s cubic-bezier(0, 0.87, 0.26, 1.04);
+}
+
+.contents > div .content-item-desc {
+    opacity: 0;
+    transform: translateX(200px);
+    transition: all 1s .9s cubic-bezier(0, 0.87, 0.26, 1.04);
+}
+
+.contents > div.show .content-item-num {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contents > div.show .content-item-title {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contents > div.show .content-item-imgWrap {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contents > div.show .content-item-desc {
+    opacity: 1;
+    transform: translateY(0);
+}
+
